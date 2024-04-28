@@ -1,5 +1,7 @@
 package com.example;
 
+import static java.util.FormatProcessor.FMT;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -29,6 +31,17 @@ public class Main {
                 String.format("Product with id %s is %s and has price $%.2f", product.productId(), product.name(), product.price());
 
         System.out.println(string3);
+
+        // Concatenation using String Templates
+        var string4 =
+                STR."Product with id \{product.productId()} is \{product.name()} and has price $\{product.price()}";
+
+        System.out.println(string4);
+
+        var string5 = FMT."""
+                        Product with id %s\{product.productId()} is %s\{product.name()} and has price $%.2f\{product.price()}""";
+
+        System.out.println(string5);
 
     }
 
