@@ -38,8 +38,8 @@ public class Main {
 
         System.out.println(string4);
 
-        var string5 = FMT."""
-                        Product with id %s\{product.productId()} is %s\{product.name()} and has price $%.2f\{product.price()}""";
+        var string5 = 
+                FMT."Product with id \{product.productId()} is \{product.name()} and has price $%.2f\{product.price()}";
 
         System.out.println(string5);
 

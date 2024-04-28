@@ -1,9 +1,29 @@
-{
-  "extensions": [
-    "GitHub.github-vscode-theme"
-    // Additional Extensions Here
-  ],
-  "onCreateCommand" : "echo PS1='\"$ \"' >> ~/.bashrc", //Set Terminal Prompt to $
-}
 
+{
+	"name": "Java",
+	"image": "mcr.microsoft.com/devcontainers/java:1-21",
+	"features": {
+		"ghcr.io/devcontainers/features/java:1": {
+			"version": "21",
+			"installMaven": "false",
+			"mavenVersion": "3.8.6",
+			"installGradle": "false"
+		}
+	},
+	// Configure tool-specific properties.
+	"customizations": {
+		"vscode": {
+			"settings": {
+				"java.jdt.ls.java.home": "/docker-java-home"
+			},
+			"extensions": [
+				"vscjava.vscode-java-pack",
+				"GitHub.github-vscode-theme"
+			]
+		}
+	},
+	"remoteUser": "vscode",
+	"onCreateCommand": "echo PS1='\"$ \"' >> ~/.bashrc" //Set Terminal Prompt to $
+	// "postCreateCommand": "sudo sh .devcontainer/startup.sh"
+}
 // DevContainer Reference: https://code.visualstudio.com/docs/remote/devcontainerjson-reference
