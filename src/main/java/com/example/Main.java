@@ -7,12 +7,12 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("ArrayList example");
         var arrayList = new ArrayList<>(Arrays.asList("Banana", "Cherry", "Date"));
-        arrayList.add(0, "Apple");
-        arrayList.add(arrayList.size(),"Elderberry");
+        arrayList.addFirst("Apple");
+        arrayList.addLast("Elderberry");
 
         System.out.println(arrayList);
-        System.out.println(arrayList.get(0));
-        System.out.println(arrayList.get(arrayList.size() - 1));
+        System.out.println(arrayList.getFirst());
+        System.out.println(arrayList.getLast());
 
         System.out.println("\nDeque example");
         var deque = new ArrayDeque<>(Arrays.asList("Banana", "Cherry", "Date"));
@@ -25,11 +25,12 @@ public class Main {
 
         System.out.println("\nLinkedHashSet example");
         var linkedHashSet = new LinkedHashSet<>(Arrays.asList("Banana", "Cherry", "Date"));
-        linkedHashSet.add("Elderberry");
+        linkedHashSet.addFirst("Apple");
+        linkedHashSet.addLast("Elderberry");
 
         System.out.println(linkedHashSet);
-        System.out.println(linkedHashSet.iterator().next());
-        System.out.println(linkedHashSet.toArray()[linkedHashSet.size() - 1]);
+        System.out.println(linkedHashSet.getFirst());
+        System.out.println(linkedHashSet.getLast());
     }
 
 }
