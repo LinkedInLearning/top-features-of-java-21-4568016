@@ -13,11 +13,16 @@ public class Main {
     }
 
     private static void printDetails(Item item) {
-        if(item instanceof FoodItem(var name, var price)) {
-            System.out.println(STR."Food item with name \{name} has price \{price}");
-        } else if(item instanceof DrinkItem(String name, double price)) {
-            System.out.println(
-                    STR."Drink item with name \{name} has price \{price}");
+        if(item instanceof FoodItem) {
+            var foodItem = (FoodItem) item;
+            var name = foodItem.name();
+            var price = foodItem.price();
+            System.out.println("Food item with name " + name + " has price " + price);
+        } else if(item instanceof DrinkItem) {
+            var drinkItem = (DrinkItem) item;
+            var name = drinkItem.name();
+            var price = drinkItem.price();
+            System.out.println("Drink item with name " + name + " has price " + price);
         }
     }
 
