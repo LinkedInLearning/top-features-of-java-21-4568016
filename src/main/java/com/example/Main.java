@@ -1,36 +1,23 @@
 package com.example;
 
-import java.util.*;
-
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println("ArrayList example");
-        var arrayList = new ArrayList<>(Arrays.asList("Banana", "Cherry", "Date"));
-        arrayList.addFirst("Apple");
-        arrayList.addLast("Elderberry");
 
-        System.out.println(arrayList);
-        System.out.println(arrayList.getFirst());
-        System.out.println(arrayList.getLast());
+        var product1 = new FoodItem("Apple", 0.99);
+        var product2 = new DrinkItem("Water", 1.29);
 
-        System.out.println("\nDeque example");
-        var deque = new ArrayDeque<>(Arrays.asList("Banana", "Cherry", "Date"));
-        deque.addFirst("Apple");
-        deque.addLast("Elderberry");
+        printDetails(product1);
+        printDetails(product2);
 
-        System.out.println(deque);
-        System.out.println(deque.getFirst());
-        System.out.println(deque.getLast());
+    }
 
-        System.out.println("\nLinkedHashSet example");
-        var linkedHashSet = new LinkedHashSet<>(Arrays.asList("Banana", "Cherry", "Date"));
-        linkedHashSet.addFirst("Apple");
-        linkedHashSet.addLast("Elderberry");
-
-        System.out.println(linkedHashSet);
-        System.out.println(linkedHashSet.getFirst());
-        System.out.println(linkedHashSet.getLast());
+    private static void printDetails(Item item) {
+        if(item instanceof FoodItem(var name, var price)) {
+            System.out.println("Food item with name " + name + " has price " + price);
+        } else if(item instanceof DrinkItem(String name, double price)) {
+            System.out.println("Drink item with name " + name + " has price " + price);
+        }
     }
 
 }
