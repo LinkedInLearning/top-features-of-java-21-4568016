@@ -4,21 +4,25 @@ public class Main {
 
     public static void main(String[] args) {
 
-        var product1 = new FoodItem("Apple", 0.99);
-        var product2 = new DrinkItem("Water", 1.29);
+        var sftpStorage = new SftpStorage();
+        var cloudStorage = new CloudStorage();
 
-        printDetails(product1);
-        printDetails(product2);
+        uploadFile(sftpStorage);
+        uploadFile(cloudStorage);
 
     }
 
-    private static void printDetails(Item item) {
-        if(item instanceof FoodItem(var name, var price)) {
-            System.out.println(STR."Food item with name \{name} has price \{price}");
-        } else if(item instanceof DrinkItem(String name, double price)) {
-            System.out.println(
-                    STR."Drink item with name \{name} has price \{price}");
+    private static void uploadFile(Storage storage) {
+        if (storage instanceof SftpStorage sftpStorage) {
+            System.out.println("Uploading file to SFTP");
+            sftpStorage.save();
+        } else if (storage instanceof CloudStorage cloudStorage) {
+            System.out.println("Uploading file to cloud storage");
+            cloudStorage.save();
+        } else {
+            throw new IllegalArgumentException("Storage type not supported");
         }
     }
+
 
 }
