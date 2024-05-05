@@ -13,14 +13,16 @@ public class Main {
     }
 
     private static void uploadFile(Storage storage) {
-        if (storage instanceof SftpStorage sftpStorage) {
-            System.out.println("Uploading file to SFTP");
-            sftpStorage.save();
-        } else if (storage instanceof CloudStorage cloudStorage) {
-            System.out.println("Uploading file to cloud storage");
-            cloudStorage.save();
-        } else {
-            throw new IllegalArgumentException("Storage type not supported");
+        switch (storage) {
+            case SftpStorage sftpStorage -> {
+                System.out.println("Storage type is SFTP");
+                sftpStorage.save();
+            }
+            case CloudStorage cloudStorage -> {
+                System.out.println("Storage type is cloud storage");
+                cloudStorage.save();
+            }
+            default -> throw new IllegalArgumentException("Storage type not supported");
         }
     }
 
