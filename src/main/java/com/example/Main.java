@@ -1,48 +1,38 @@
 package com.example;
 
-import static java.util.FormatProcessor.FMT;
+import java.util.ArrayDeque;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.LinkedHashSet;
 
 public class Main {
 
     public static void main(String[] args) {
+        System.out.println("ArrayList example");
+        var arrayList = new ArrayList<>(Arrays.asList("Banana", "Cherry", "Date"));
+        arrayList.add(0, "Apple");
+        arrayList.add(arrayList.size(),"Elderberry");
 
-        var product = new Product(1L, "Laptop", 1000.0);
+        System.out.println(arrayList);
+        System.out.println(arrayList.get(0));
+        System.out.println(arrayList.get(arrayList.size() - 1));
 
-        // Concatenation using + operator
-        var string1 = "Product with id " + product.productId() + " is " +
-                product.name() + " and has price $" + product.price();
+        System.out.println("\nDeque example");
+        var deque = new ArrayDeque<>(Arrays.asList("Banana", "Cherry", "Date"));
+        deque.addFirst("Apple");
+        deque.addLast("Elderberry");
 
-        System.out.println(string1);
+        System.out.println(deque);
+        System.out.println(deque.getFirst());
+        System.out.println(deque.getLast());
 
-        // Concatenation using StringBuilder
-        var string2 = new StringBuilder()
-                .append("Product with id ")
-                .append(product.productId())
-                .append(" is ")
-                .append(product.name())
-                .append(" and has price $")
-                .append(product.price())
-                .toString();
+        System.out.println("\nLinkedHashSet example");
+        var linkedHashSet = new LinkedHashSet<>(Arrays.asList("Banana", "Cherry", "Date"));
+        linkedHashSet.add("Elderberry");
 
-        System.out.println(string2);
-
-        // Concatenation using String.format
-        var string3 =
-                String.format("Product with id %s is %s and has price $%.2f", product.productId(), product.name(), product.price());
-
-        System.out.println(string3);
-
-        // Concatenation using String Templates
-        var string4 =
-                STR."Product with id \{product.productId()} is \{product.name()} and has price $\{product.price()}";
-
-        System.out.println(string4);
-
-        var string5 = FMT."""
-                        Product with id %s\{product.productId()} is %s\{product.name()} and has price $%.2f\{product.price()}""";
-
-        System.out.println(string5);
-
+        System.out.println(linkedHashSet);
+        System.out.println(linkedHashSet.iterator().next());
+        System.out.println(linkedHashSet.toArray()[linkedHashSet.size() - 1]);
     }
 
 }
