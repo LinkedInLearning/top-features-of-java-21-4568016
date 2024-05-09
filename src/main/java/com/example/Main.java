@@ -4,25 +4,15 @@ public class Main {
 
     public static void main(String[] args) {
 
-        var sftpStorage = new SftpStorage();
-        var cloudStorage = new CloudStorage();
+        var house = new House("123 Main St", 3, true);
 
-        uploadFile(sftpStorage);
-        uploadFile(cloudStorage);
+        printNumberOfBedrooms(house);
 
     }
 
-    private static void uploadFile(Storage storage) {
-        switch (storage) {
-            case SftpStorage sftpStorage -> {
-                System.out.println("Storage type is SFTP");
-                sftpStorage.save();
-            }
-            case CloudStorage cloudStorage -> {
-                System.out.println("Storage type is cloud storage");
-                cloudStorage.save();
-            }
-            default -> throw new IllegalArgumentException("Storage type not supported");
+    private static void printNumberOfBedrooms(Building building) {
+        if (building instanceof House house) {
+            System.out.println("Number of bedrooms: " + house.numberOfBedrooms());
         }
     }
 
