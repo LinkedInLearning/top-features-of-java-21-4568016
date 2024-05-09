@@ -1,29 +1,9 @@
 {
-	"name": "Java",
-	"build": {
-		"dockerfile": "Dockerfile",
-		"args": {
-			"VARIANT": "21",	//Can change to another of Java
-			"INSTALL_MAVEN": "false",
-			"INSTALL_GRADLE": "false",
-			"NODE_VERSION": "lts/*"
-		}
-	},
-
-	// Configure tool-specific properties.
-	"customizations": {
-		"vscode": {
-			"settings": { 
-				"java.home": "/docker-java-home"
-			},
-			"extensions": [
-				"vscjava.vscode-java-pack",
-				"GitHub.github-vscode-theme"
-			]
-		}
-	},
-	"remoteUser": "vscode",
-	"onCreateCommand": "echo PS1='\"$ \"' >> ~/.bashrc" //Set Terminal Prompt to $
+  "extensions": [
+    "GitHub.github-vscode-theme"
+    // Additional Extensions Here
+  ],
+  "onCreateCommand" : "echo PS1='\"$ \"' >> ~/.bashrc", //Set Terminal Prompt to $
 }
 
 // DevContainer Reference: https://code.visualstudio.com/docs/remote/devcontainerjson-reference
