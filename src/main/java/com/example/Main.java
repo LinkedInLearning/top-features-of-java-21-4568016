@@ -1,19 +1,29 @@
 package com.example;
 
+import java.math.BigDecimal;
+import java.util.List;
+
 public class Main {
 
     public static void main(String[] args) {
 
-        var house = new House("123 Main St", 3, true);
-        printNumberOfBedrooms(house);
+        List<Item> items = List.of(
+                new Item(new BigDecimal("10.00")),
+                new Item(new BigDecimal("20.00")),
+                new Item(new BigDecimal("30.00"))
+        );
 
-    }
+        var basketTotal = 0;
 
-    private static void printNumberOfBedrooms(Building building) {
-        if (building instanceof House(_, int numberOfBedrooms, _)) {
-            System.out.println("Number of bedrooms: " + numberOfBedrooms);
+        for (Item item : items) {
+            basketTotal ++;
         }
+
+        System.out.println("Basket total: " + basketTotal);
+
+
     }
+
 
 
 }
