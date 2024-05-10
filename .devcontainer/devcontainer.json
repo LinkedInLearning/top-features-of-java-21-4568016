@@ -1,27 +1,31 @@
-{
-    "name": "Java",
-    "build": {
-        "dockerfile": "Dockerfile",
-        "args": {
-            "VARIANT": "21", // Change this to 21 to use Java 21
-            "INSTALL_MAVEN": "false",
-            "INSTALL_GRADLE": "false",
-            "NODE_VERSION": "lts/*"
-        }
-    },
-    "customizations": {
-        "vscode": {
-            "settings": { 
-                "java.home": "/docker-java-home"
-            },
-            "extensions": [
-                "vscjava.vscode-java-pack",
-                "GitHub.github-vscode-theme"
-            ]
-        }
-    },
-    "remoteUser": "vscode",
-    "onCreateCommand": "echo PS1='\"$ \"' >> ~/.bashrc"
-}
 
+{
+	"name": "Java",
+	"dockerComposeFile": "docker-compose.yml",
+	"service": "app",
+	"workspaceFolder": "/workspace",
+	"features": {
+		"ghcr.io/devcontainers/features/java:1": {
+			"version": "21",
+			"installMaven": "true",
+			"mavenVersion": "3.8.6",
+			"installGradle": "false"
+		}
+	},
+	// Configure tool-specific properties.
+	"customizations": {
+		"vscode": {
+			"settings": {
+				"java.jdt.ls.java.home": "/docker-java-home"
+			},
+			"extensions": [
+				"vscjava.vscode-java-pack",
+				"GitHub.github-vscode-theme"
+			]
+		}
+	},
+	"remoteUser": "vscode",
+	"onCreateCommand": "echo PS1='\"$ \"' >> ~/.bashrc", //Set Terminal Prompt to $
+	"postCreateCommand": "sudo sh .devcontainer/startup.sh"
+}
 // DevContainer Reference: https://code.visualstudio.com/docs/remote/devcontainerjson-reference
