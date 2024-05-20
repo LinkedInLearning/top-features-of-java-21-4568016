@@ -7,7 +7,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        try (var executor = Executors.newSingleThreadExecutor()) {
+        try (var executor = Executors.newVirtualThreadPerTaskExecutor()) {
             int i = 0;
             while (i < 10_000) {
                 executor.execute(() -> {
