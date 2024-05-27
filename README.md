@@ -1,4 +1,4 @@
-# Top Features of Java 21
+# Top Features of Java 21 
 This is the repository for the LinkedIn Learning course Top Features of Java 21. The full course is available from [LinkedIn Learning][lil-course-url].
 
 _See the readme file in the main branch for updated instructions and information._
