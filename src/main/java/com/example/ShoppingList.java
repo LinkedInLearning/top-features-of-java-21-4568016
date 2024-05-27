@@ -5,14 +5,14 @@ import java.util.List;
 
 public class ShoppingList {
 
-    private ArrayList<String> shoppingList = new ArrayList<>(List.of("Bread", "Milk", "Eggs", "Butter"));
+    private ArrayList<String> list = new ArrayList<>(List.of("Bread", "Milk", "Eggs", "Butter"));
 
     public String getFirstItem() {
-        return "";
+        return list.getFirst();
     }
 
     public String getLastItem() {
-        return "";
+        return list.getLast();
     }
 
 }
