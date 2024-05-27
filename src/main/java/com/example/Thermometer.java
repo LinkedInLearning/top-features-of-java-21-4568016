@@ -3,7 +3,7 @@ package com.example;
 public class Thermometer {
 
     public String getTemperature(double temperature) {
-        return "";
+        return STR."The temperature is \{temperature} degrees";
     }
 
 }
