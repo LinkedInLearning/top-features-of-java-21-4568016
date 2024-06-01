@@ -8,7 +8,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        try (var executor = Executors.newVirtualThreadPerTaskExecutor()) {
+        try (var executor = Executors.newFixedThreadPool(1)) {
             IntStream.range(0, 99999).forEach(i -> {
                 executor.submit(() -> {
                     Thread.sleep(Duration.ofSeconds(1));
