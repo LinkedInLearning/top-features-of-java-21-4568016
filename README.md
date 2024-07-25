@@ -1,5 +1,9 @@
-# Top Features of Java 21
+# Top Features of Java 21 
 This is the repository for the LinkedIn Learning course Top Features of Java 21. The full course is available from [LinkedIn Learning][lil-course-url].
+
+![lil-thumbnail-url]
+
+In this course, developer Bethan Palmer guides you through the top features of Java 21. After an overview of the Java release cycle, dive into string templates, sequenced collections, and record patterns. Learn about pattern matching with switch statements, as well as how to use unnamed patterns and variables. Discover the new way to define  main methods and find out what an unnamed class is. Plus, explore virtual threads and generational ZGC.
 
 _See the readme file in the main branch for updated instructions and information._
 ## Instructions
@@ -20,15 +24,14 @@ To resolve this issue:
     Add changes to git using this command: git add .
 	Commit changes using this command: git commit -m "some message"
 
-## Installing
-1. To use these exercise files, you must have the following installed:
-	- [list of requirements for course]
-2. Clone this repository into your local machine using the terminal (Mac), CMD (Windows), or a GUI tool like SourceTree.
-3. [Course-specific instructions]
+### Instructor
 
+Bethan Palmer
+
+Developer
 
 [0]: # (Replace these placeholder URLs with actual course URLs)
 
-[lil-course-url]: https://www.linkedin.com/learning/
-[lil-thumbnail-url]: http://
+[lil-course-url]: https://www.linkedin.com/learning/top-features-of-java-21
+[lil-thumbnail-url]: https://media.licdn.com/dms/image/D4D0DAQFok5yyJWr8YQ/learning-public-crop_675_1200/0/1721765368118?e=2147483647&v=beta&t=nD7nZVg1CsXBi8b_kSLGZKQqh1mxl8UHELBMT63loj0
 
